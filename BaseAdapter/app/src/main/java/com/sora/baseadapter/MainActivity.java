@@ -41,11 +41,11 @@ public class MainActivity extends AppCompatActivity {
         mlist = new ArrayList<Bean>();
         Bean bean = new Bean("我","我好方","2015-12-6","10086");
         mlist.add(bean);
-        Bean bean = new Bean("我","我也很方","2015-12-6","10086");
+        bean = new Bean("我", "我也很方", "2015-12-6", "10086");
         mlist.add(bean);
-        Bean bean = new Bean("我","我也方了","2015-12-6","10086");
+        bean = new Bean("我","我也方了","2015-12-6","10086");
         mlist.add(bean);
-        Bean bean = new Bean("大家","大家一起方","2015-12-6","10086");
+        bean = new Bean("大家","大家一起方","2015-12-6","10086");
         mlist.add(bean);
     }
 
