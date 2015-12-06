@@ -9,6 +9,13 @@ public class Bean {
     private String time;
     private String phone;
 
+    public Bean(String desc, String phone, String time, String title) {
+        this.desc = desc;
+        this.phone = phone;
+        this.time = time;
+        this.title = title;
+    }
+
     public Bean() {
     }
 

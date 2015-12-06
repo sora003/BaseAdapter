@@ -8,9 +8,16 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ListView;
+
+import java.util.AbstractList;
+import java.util.ArrayList;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
+    private ListView listView;
+    private List<Bean> mlist;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,6 +33,25 @@ public class MainActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
+        initDatas();
+        initView();
+    }
+
+    private void initDatas() {
+        mlist = new ArrayList<Bean>();
+        Bean bean = new Bean("我","我好方","2015-12-6","10086");
+        mlist.add(bean);
+        Bean bean = new Bean("我","我也很方","2015-12-6","10086");
+        mlist.add(bean);
+        Bean bean = new Bean("我","我也方了","2015-12-6","10086");
+        mlist.add(bean);
+        Bean bean = new Bean("大家","大家一起方","2015-12-6","10086");
+        mlist.add(bean);
+    }
+
+    private void initView() {
+        listView = (ListView) findViewById(R.id.id_listview);
+
     }
 
     @Override
