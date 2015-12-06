@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">BaseAdapter</string>
+    <string name="action_settings">Settings</string>
+    <string name="text_title">我</string>
+    <string name="text_desc">我好方</string>
+    <string name="text_time">2015-12-6</string>
+    <string name="text_phone">10086</string>
+</resources>
