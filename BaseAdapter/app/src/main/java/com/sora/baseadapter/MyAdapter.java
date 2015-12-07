@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.TextView;
 
 import java.util.List;
 
@@ -38,8 +39,33 @@ public class MyAdapter extends BaseAdapter{
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        return null;
+        ViewHolder holder = null;
+        if (convertView == null){
+            convertView = mInfalter.inflate(R.layout.item_listview,parent,false);
+            holder = new ViewHolder();
+            holder.mTitle = (TextView) convertView.findViewById(R.id.id_title);
+            holder.mDesc = (TextView) convertView.findViewById(R.id.id_desc);
+            holder.mTime = (TextView) convertView.findViewById(R.id.id_time);
+            holder.mPhone = (TextView) convertView.findViewById(R.id.id_phone);
+            convertView.setTag(holder);
+        }
+        else {
+            holder = (ViewHolder) convertView.getTag();
+        }
+
+        Bean bean = mlist.get(position);
+        holder.mTitle.setText(bean.getTitle());
+        holder.mDesc.setText(bean.getDesc());
+        holder.mTitle.setText(bean.getTime());
+        holder.mPhone.setText(bean.getPhone());
+
+        return convertView;
     }
 
-    private class ViewHolder
+    private class ViewHolder{
+        TextView mTitle;
+        TextView mDesc;
+        TextView mTime;
+        TextView mPhone;
+    }
 }
