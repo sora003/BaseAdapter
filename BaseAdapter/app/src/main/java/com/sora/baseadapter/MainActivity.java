@@ -18,6 +18,7 @@ public class MainActivity extends AppCompatActivity {
 
     private ListView listView;
     private List<Bean> mlist;
+    private MyAdapter myAdapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,11 +48,13 @@ public class MainActivity extends AppCompatActivity {
         mlist.add(bean);
         bean = new Bean("大家","大家一起方","2015-12-6","10086");
         mlist.add(bean);
+
+        myAdapter = new MyAdapter(this,mlist);
     }
 
     private void initView() {
         listView = (ListView) findViewById(R.id.id_listview);
-
+        listView.setAdapter(myAdapter);
     }
 
     @Override
